@@ -6,7 +6,8 @@ class Plant:
 
     def display_info(self) -> None:
         print(f"{self.name}: {self.height}cm, {self.age} days old")
-    
+
+
 def main() -> None:
     print("=== Garden Plant Registry ===")
 
@@ -17,6 +18,7 @@ def main() -> None:
     plant1.display_info()
     plant2.display_info()
     plant3.display_info()
+
 
 if __name__ == "__main__":
     main()
