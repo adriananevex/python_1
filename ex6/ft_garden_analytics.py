@@ -16,10 +16,30 @@ class FloweringPlant(Plant):
     def __init__(self, name: str, height: int, color: str) -> None:
         super().__init__(name, height)
         self.color: str = color
-        self.is_bloming: bool = False
+        self.is_blooming: bool = False
 
     def bloom(self) -> None:
         self.is_blooming = True
+
+    def get_info(self) -> str:
+        base_info = super().get_info()
+        return (
+            f"{base_info}, Color: {self.color}, "
+            f"Blooming: {self.is_blooming}"
+        )
+
+
+class PrizeFlower(FloweringPlant):
+
+    def __init__(
+        self,
+        name: str,
+        height: int,
+        color: str,
+        prize_points: int,
+    ) -> None:
+        super().__init__(name, height, color)
+        self.prize_points: int = prize_points
 
     def get_info(self) -> str:
         base_info = super().get_info()
@@ -32,13 +52,13 @@ class GardenManager:
 
     class GardenStats:
 
-        @staticmethos
+        @staticmethod
         def validate_height(height: int) -> bool:
             return height >= 0
 
         @staticmethod
         def calculate_total_growth(plants: list[Plant]) -> int:
-            return sum(plant.height for p in plants)
+            return sum(plant.height for plant in plants)
 
     def __init__(self, owner: str) -> None:
         self.owner: str = owner
@@ -51,19 +71,19 @@ class GardenManager:
 
     def grow_all(self) -> None:
         print(f"\n=== {self.owner} is helping all plants grow...")
-        for p in self.plants:
+        for plant in self.plants:
             plant.grow()
             print(f"{plant.name} grew 1cm")
 
-    def garde_report(self) -> None:
+    def garden_report(self) -> None:
         print(f"\n=== {self.owner}'s Garden Report ===")
-        for p in self.plants:
+        for plant in self.plants:
             print("-", plant.get_info())
 
-        total_growth = self.GardenSats.calculate_total_growth(self.plants)
+        total_growth = self.GardenStats.calculate_total_growth(self.plants)
         print(f"Total height sum: {total_growth}cm")
 
-    @classmethos
+    @classmethod
     def create_garden_network(cls) -> str:
         return f"Total gardens managed: {cls.total_gardens}"
 
@@ -72,7 +92,7 @@ def main() -> None:
     print("=== Garden Management System Demo ===\n")
 
     garden1 = GardenManager("Alice")
-    garden2 = GardenManager("Bob")
+    GardenManager("Bob")
 
     oak = Plant("Oak Tree", 100)
     rose = FloweringPlant("Rose", 25, "red")
@@ -88,9 +108,12 @@ def main() -> None:
     garden1.grow_all()
     garden1.garden_report()
 
-    print("\nHeight validation test:", GardenManager.GardenStats.validate_height(10))
+    print(
+        "\nHeight validation test:",
+        GardenManager.GardenStats.validate_height(10),
+    )
 
-    print(GardenManager.crate_garden_network())
+    print(GardenManager.create_garden_network())
 
 
 if __name__ == "__main__":
