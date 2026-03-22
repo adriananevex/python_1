@@ -21,7 +21,7 @@ def main() -> None:
     ]
 
     for p in plants:
-        print(f"Created: {Plant.get_info()}")
+        print(f"Created: {p.get_info()}")
 
         print(f"\nTotal plants created: {len(plants)}")
 

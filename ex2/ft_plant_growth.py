@@ -4,17 +4,14 @@ class Plant:
         self.height: int = height
         self.age: int = age
 
+    def grow(self) -> None:
+        self.height += 1
 
-def grow(self) -> None:
-    self.height += 1
+    def age_one_day(self) -> None:
+        self.age += 1
 
-
-def age_one_day(self) -> None:
-    self.age += 1
-
-
-def get_info(self) -> str:
-    return f"{self.name}: {self.height}cm, {self.age} days old"
+    def get_info(self) -> str:
+        return f"{self.name}: {self.height}cm, {self.age} days old"
 
 
 def main() -> None:
@@ -29,6 +26,7 @@ def main() -> None:
 
     print("=== Day 7 ===")
     print(rose.get_info())
+    print("Growth this week: +6cm")
 
 
 if __name__ == "__main__":
