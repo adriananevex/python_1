@@ -11,12 +11,15 @@ class Plant:
 def main() -> None:
     print("=== Garden Plant Registry ===")
 
-    plant1 = Plant("Rose", 25, 30)
-    plant2 = Plant("Sunflower", 80, 45)
-    plant3 = Plant("Cactus", 15, 120)
+    plants = [
+        Plant("Rose", 25, 30),
+        Plant("Sunflower", 80, 45),
+        Plant("Cactus", 15, 120),
+    ]
 
     for p in plants:
         p.show()
+
 
 if __name__ == "__main__":
     main()

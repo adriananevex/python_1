@@ -6,7 +6,7 @@ class Plant:
         self.age = age
 
     def show(self) -> str:
-        return f"{self.name} ({round(self.height,1)}cm, {self.age} days old)"
+        return f"{self.name} ({round(self.height, 1)}cm, {self.age} days old)"
 
 
 def main() -> None:
