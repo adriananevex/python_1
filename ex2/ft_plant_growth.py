@@ -20,13 +20,17 @@ def main() -> None:
     print("=== Day 1 ===")
     print(rose.get_info())
 
+    initial_height = rose.height
+
     for i in range(6):
         rose.grow()
         rose.age_one_day()
 
     print("=== Day 7 ===")
     print(rose.get_info())
-    print("Growth this week: +6cm")
+    
+    growth = rose.height - initial_height
+    print(f"Growth this week: +{growth}cm")
 
 
 if __name__ == "__main__":
