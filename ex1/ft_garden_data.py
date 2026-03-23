@@ -1,10 +1,10 @@
 class Plant:
     def __init__(self, name: str, height: int, age: int) -> None:
-        self.name: str = name
-        self.height: int = height
-        self.age: int = age
+        self.name = name
+        self.height = height
+        self.age = age
 
-    def display_info(self) -> None:
+    def show(self) -> None:
         print(f"{self.name}: {self.height}cm, {self.age} days old")
 
 
@@ -15,10 +15,8 @@ def main() -> None:
     plant2 = Plant("Sunflower", 80, 45)
     plant3 = Plant("Cactus", 15, 120)
 
-    plant1.display_info()
-    plant2.display_info()
-    plant3.display_info()
-
+    for p in plants:
+        p.show()
 
 if __name__ == "__main__":
     main()

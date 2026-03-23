@@ -1,29 +1,27 @@
 class Plant:
 
-    def __init__(self, name: str, height: int, age: int) -> None:
-        self.name: str = name
-        self.height: int = height
-        self.age: int = age
+    def __init__(self, name: str, height: float, age: int) -> None:
+        self.name = name
+        self.height = height
+        self.age = age
 
-    def get_info(self) -> str:
-        return f"{self.name} ({self.height}cm, {self.age} days)"
+    def show(self) -> str:
+        return f"{self.name} ({round(self.height,1)}cm, {self.age} days old)"
 
 
 def main() -> None:
     print("=== Plant Factory Output ===")
 
     plants = [
-        Plant("Rose", 25, 30),
-        Plant("Oak", 200, 365),
-        Plant("Cactus", 5, 90),
-        Plant("Sunflower", 80, 45),
-        Plant("Fern", 15, 120),
+        Plant("Rose", 25.0, 30),
+        Plant("Oak", 200.0, 365),
+        Plant("Cactus", 5.0, 90),
+        Plant("Sunflower", 80.0, 45),
+        Plant("Fern", 15.0, 120),
     ]
 
     for p in plants:
-        print(f"Created: {p.get_info()}")
-
-        print(f"\nTotal plants created: {len(plants)}")
+        print(f"Created: {p.show()}")
 
 
 if __name__ == "__main__":

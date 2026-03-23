@@ -1,9 +1,9 @@
 class SecurePlant:
 
-    def __init__(self, name: str, height: int, age: int) -> None:
-        self.name: str = name
-        self._height: int = 0
-        self._age: int = 0
+    def __init__(self, name: str, height: float, age: int) -> None:
+        self.name = name
+        self._height = 0
+        self._age = 0
 
         self.set_height(height)
         self.set_age(age)
@@ -28,20 +28,21 @@ class SecurePlant:
     def get_age(self) -> int:
         return self._age
 
-    def get_info(self) -> str:
-        return f"{self.name} ({self._height}cm, {self._age} days)"
+    def show(self) -> str:
+        return f"{self.name} ({self._height}cm, {self._age} days old)"
 
 
 def main() -> None:
     print("=== Garden Security System ===")
 
-    plant = SecurePlant("Rose", 25, 30)
+    plant = SecurePlant("Rose", 25.0, 30)
+    print("Plant created: ", show(plant))
 
     print("\nInvalid operation attempted:")
     plant.set_height(-5)
 
     print("\nCurrent plant:")
-    print(plant.get_info())
+    print(plant.show())
 
 
 if __name__ == "__main__":
