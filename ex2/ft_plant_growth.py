@@ -28,7 +28,7 @@ def main() -> None:
 
     print("=== Day 7 ===")
     print(rose.get_info())
-    
+
     growth = rose.height - initial_height
     print(f"Growth this week: +{growth}cm")
 
